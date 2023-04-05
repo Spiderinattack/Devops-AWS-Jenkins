@@ -3,7 +3,7 @@
 #import sys
 
 if __name__ == "__main__":
-''' Main logic'''
+    ''' Main logic'''
     n = int(input().strip())
     l = []
     for a0 in range(n):
