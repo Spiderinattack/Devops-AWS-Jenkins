@@ -2,6 +2,7 @@ import unittest
 import os
 import sqlite3
 
+
 db_list = ["northwind.db","ignore.db"]
 delta_count_lst= [5,None]
 db_ptr=0
