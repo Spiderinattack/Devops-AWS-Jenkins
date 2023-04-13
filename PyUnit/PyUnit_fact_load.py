@@ -21,8 +21,8 @@ class Pyunit_Test(unittest.TestCase):
         global delta_count_lst
         global db_ptr
         
-        self.conn = sqlite3.connect(db_list[db_ptr])
-        self.command = "sqlite3 "+db_list[db_ptr]+" < fact_load.sql"
+        self.conn = sqlite3.connect("PyUnit/"+db_list[db_ptr])
+        self.command = "sqlite3 PyUnit/"+db_list[db_ptr]+" < fact_load.sql"
         self.delta_count=delta_count_lst[db_ptr]
         db_ptr=db_ptr+1
                 
