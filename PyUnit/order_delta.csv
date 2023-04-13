@@ -1,0 +1,5 @@
+OrderID,CustomerID,EmployeeID,OrderDate,RequiredDate,ShippedDate,ShipVia,Freight,ShipName,ShipAddress,ShipCity,ShipRegion,ShipPostalCode,ShipCountry
+11077,RATTC,1,2018-05-06,2018-06-03,,2,8.53,"Rattlesnake Canyon Grocery","2817 Milton Dr.",Albuquerque,"North America",87110,USA
+11076,BONAP,4,2018-05-06,2018-06-03,,2,38.28,"Bon app-","12, rue des Bouchers",Marseille,"Western Europe",13008,France
+11075,RICSU,8,2018-05-06,2018-06-03,,2,6.19,"Richter Supermarkt","Starenweg 5","Genève","Western Europe",1204,Switzerland
+11074,SIMOB,7,2018-05-06,2018-06-03,,2,18.44,"Simons bistro","Vinbæltet 34",Kobenhavn,"Northern Europe",1734,Denmark
