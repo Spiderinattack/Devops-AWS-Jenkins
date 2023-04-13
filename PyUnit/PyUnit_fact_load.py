@@ -3,7 +3,7 @@ import os
 import sqlite3
 
 
-db_list = ["PyUnit/northwind.db","ignore.db"]
+db_list = ["northwind.db","ignore.db"]
 delta_count_lst= [5,None]
 db_ptr=0
 
@@ -22,7 +22,7 @@ class Pyunit_Test(unittest.TestCase):
         global db_ptr
         
         self.conn = sqlite3.connect(db_list[db_ptr])
-        self.command = "sqlite3 "+db_list[db_ptr]+" < PyUnit/fact_load.sql"
+        self.command = "sqlite3 "+db_list[db_ptr]+" < fact_load.sql"
         self.delta_count=delta_count_lst[db_ptr]
         db_ptr=db_ptr+1
                 
