@@ -3,8 +3,8 @@ import os
 import sqlite3
 
 
-db_list = ["northwind.db","ignore.db"]
-delta_count_lst= [5,None]
+db_list = ["northwind.db","northwind.db","ignore.db"]
+delta_count_lst= [5,5,None]
 db_ptr=0
 
 
@@ -60,9 +60,9 @@ class Pyunit_Test(unittest.TestCase):
             assertAlmostEqual(a,b,precision_digits)
         '''
         
-    #def test_case2(self):
-    #    '''Dummy Test Case'''
-    #    print("inside Test case 2")
+    def test_case2(self):
+        '''Dummy Test Case'''
+        print("inside Test case 2")
 
     def tearDown(self):
         ''' Tear down function(predefined: not user defined) is used to wrap up the current test case for next test case execution by:
