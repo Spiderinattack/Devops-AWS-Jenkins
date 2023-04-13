@@ -17,7 +17,7 @@ CREATE temp TABLE [order_delta](
    [ShipCountry]TEXT
 );
 
-.import PyUnit/order_delta.csv order_delta
+.import order_delta.csv order_delta
 
 insert into fact_order
 select 
