@@ -6,3 +6,5 @@ trufflehog https://github.com/Spiderinattack/Devops-AWS-Jenkins.git
   
 #to check trufflehog regex
 trufflehog --regex --entropy False https://github.com/Spiderinattack/Devops-AWS-Jenkins.git
+
+
