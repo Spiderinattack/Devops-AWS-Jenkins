@@ -52,6 +52,9 @@ class Pyunit_Test(unittest.TestCase):
         
         self.assertEqual(self.delta_count,rec_cnt_inc-self.rec_cnt)
         self.assertEqual(dupe_cnt_inc,0)
+        
+        print("Test case 1 ran successfully")
+        
         '''
             Other Assert functions:
             assertEqual(a,b)
@@ -63,6 +66,7 @@ class Pyunit_Test(unittest.TestCase):
     def test_case2(self):
         '''Dummy Test Case'''
         print("inside Test case 2")
+        print("Test case 2 ran successfully")
 
     def tearDown(self):
         ''' Tear down function(predefined: not user defined) is used to wrap up the current test case for next test case execution by:
