@@ -1,5 +1,5 @@
 #to install trfflehog if not
-pip3 install truffleHog
+#pip3 install truffleHog
 
 #to check trufflehog entropy
 trufflehog https://github.com/Spiderinattack/Devops-AWS-Jenkins.git
