@@ -12,6 +12,10 @@ pipeline {
         stage('TruffleHog') {
             steps {
                 sh 'echo TruffleHog'
+                sh 'pip3 install truffleHog'
+                sh 'sudo chmod 777 /var/lib/jenkins/workspace/Python_Job/TruffleHog/Trufflehog_scan.py'
+                sh 'sudo systemctl restart jenkins'
+                sh '/var/lib/jenkins/workspace/Python_Job/TruffleHog/Trufflehog_scan.py'
             }
         }
         stage('Pylint') {
