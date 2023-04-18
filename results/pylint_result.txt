@@ -1,1 +1,15 @@
-// dummy file
+************* Module code1
+Programs/code1.py:12:0: C0301: Line too long (105/100) (line-too-long)
+Programs/code1.py:18:0: C0303: Trailing whitespace (trailing-whitespace)
+Programs/code1.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+Programs/code1.py:3:0: W0611: Unused import sys (unused-import)
+
+------------------------------------------------------------------
+Your code has been rated at 6.92/10 (previous run: 6.92/10, +0.00)
+
+************* Module code1new
+Programs/code1new.py:7:4: W0105: String statement has no effect (pointless-string-statement)
+
+------------------------------------------------------------------
+Your code has been rated at 9.23/10 (previous run: 9.23/10, +0.00)
+
