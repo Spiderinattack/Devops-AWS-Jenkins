@@ -15,9 +15,9 @@ sed_command = "sed -n 's/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p' /ho
 # sed_command = ["sed", "-n", "s/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p", "/home/ec2-user/Jenkins/Dev/Jenkins/workspace/Python_Job/results/pylint_result.txt"]
 # score = subprocess.call(['sed -n "s/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p" pylint_result.txt'], shell=True)
 # score = subprocess.run(sed_command, shell=True, capture_output=True, text=True)
-# score_bytes = subprocess.check_output(sed_command, shell=True, text=True, encoding='utf-8')
-score = subprocess.check_output(sed_command, shell=True, encoding='utf-8')
-# score = score_bytes.decode('utf-8')
+# score = subprocess.check_output(sed_command, shell=True, text=True, encoding='utf-8')
+score_bytes = subprocess.check_output(sed_command, shell=True)
+score = score_bytes.decode('utf-8')
 # score = subprocess.Popen(sed_command, stdout=subprocess.PIPE, text=True)
 
 # print the output
