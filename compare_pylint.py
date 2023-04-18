@@ -14,7 +14,7 @@ print('Current new Working Directory is: ', os.getcwd())
 sed_command = "sed -n 's/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p' /home/ec2-user/Jenkins/Dev/Jenkins/workspace/Python_Job/results/pylint_result.txt"
 # score = subprocess.call(['sed -n "s/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p" pylint_result.txt'], shell=True)
 score = subprocess.run(sed_command, shell=True, capture_output=True, text=True)
-print(score.stdout)
+print(score)
 # score = subprocess.call(["sed -n 's/^Final score is \([-0-9.]*\)\/.*/\1/p' pylint_result.txt"], shell=True)
 
 
@@ -22,10 +22,10 @@ print(score.stdout)
 # with open("pylint_result.txt") as f:
 #     for line in f:
 #         score = regex.search(line)
-print("score is: ", score.stdout)
-print("Type of score is: ", type(score.stdout))
+print("score is: ", score)
+print("Type of score is: ", type(score))
 
-if score.stdout > '7':
+if score > '7':
   print("score > than 7")
 else:
   print("score < than 7")
