@@ -13,7 +13,8 @@ print('Current new Working Directory is: ', os.getcwd())
 
 sed_command = "sed -n 's/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p' /home/ec2-user/Jenkins/Dev/Jenkins/workspace/Python_Job/results/pylint_result.txt"
 # score = subprocess.call(['sed -n "s/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p" pylint_result.txt'], shell=True)
-score = subprocess.run(sed_command, shell=True, capture_output=True, text=True)
+# score = subprocess.run(sed_command, shell=True, capture_output=True, text=True)
+score = subprocess.check_output(sed_command, shell=True, text=True)
 print(score)
 # score = subprocess.call(["sed -n 's/^Final score is \([-0-9.]*\)\/.*/\1/p' pylint_result.txt"], shell=True)
 
