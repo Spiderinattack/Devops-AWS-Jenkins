@@ -10,7 +10,7 @@ print('Current Working Directory is: ', os.getcwd())
 # score = os.popen("sed -n 's/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p' pylint_result.txt").read()
 os.chdir('/home/ec2-user/Jenkins/Dev/Jenkins/workspace/Python_Job/results/')
 print('Current new Working Directory is: ', os.getcwd())
-score = subprocess.call(["sed -n 's/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p' pylint_result.txt"], shell=True)
+score = subprocess.call(['sed -n "s/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p" pylint_result.txt'], shell=True)
 
 
 # regex = re.compile('s/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p')
