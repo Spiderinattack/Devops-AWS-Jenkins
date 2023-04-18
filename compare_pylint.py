@@ -16,7 +16,7 @@ sed_command = "sed -n 's/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p' /ho
 # score = subprocess.call(['sed -n "s/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p" pylint_result.txt'], shell=True)
 # score = subprocess.run(sed_command, shell=True, capture_output=True, text=True)
 score = subprocess.check_output(sed_command, shell=True, text=True, encoding='utf-8')
-score = subprocess.Popen(sed_command, stdout=subprocess.PIPE, text=True)
+# score = subprocess.Popen(sed_command, stdout=subprocess.PIPE, text=True)
 
 # print the output
 # print(score.communicate()[0])
