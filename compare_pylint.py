@@ -4,10 +4,10 @@ import re
 
 os.system('pwd')
 # os.system("sed -n 's/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p' results/pylint_result.txt")
-os.chdir('results')
-print('Current Working Directory is: ', os.getcwd())
+# os.chdir('results')
+# print('Current Working Directory is: ', os.getcwd())
 # os.system('cd results')
-os.chdir('/home/ec2-user/Jenkins/Dev/Jenkins/workspace/Python_Job/results/')
+# os.chdir('/home/ec2-user/Jenkins/Dev/Jenkins/workspace/Python_Job/results/')
 print('Current new Working Directory is: ', os.getcwd())
 # score = os.popen("sed -n 's/^Final score is \([-0-9.]*\)\/.*/\1/p' pylint_result.txt").read()
 
