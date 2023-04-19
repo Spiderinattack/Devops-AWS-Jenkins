@@ -5,6 +5,11 @@ import os
 repo_url = 'https://github.com/Spiderinattack/Devops-AWS-Jenkins.git'
 repo_dir = '/var/lib/jenkins/workspace/Trufflehog_Job/TruffleHog/TruffleHog_GIT_Repo'
 
+#Check if Repo directory exists or not
+if not os.path.exists(repo_dir):
+    os.makedirs(repo_dir)
+    print("TruffleHog Directory created")
+    
 # Clone the repository to the specified directory
 subprocess.run(['git', 'clone', repo_url, repo_dir])
 
