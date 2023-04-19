@@ -17,7 +17,7 @@ sed_command = "sed -n 's/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p' pyl
 
 with open('/var/lib/jenkins/workspace/new_Job/results/pylint_result.txt', encoding='utf-8') as f:
     file_contents = f.read()
-
+print(file_contents)
 score = subprocess.check_output(sed_command, shell=True, input=file_contents, encoding='utf-8')
 # score_bytes = subprocess.check_output(sed_command, shell=True)
 # score = score_bytes.decode('utf-8')
