@@ -1,24 +1,22 @@
-import subprocess
+import trufflehog3
 import os
 
-# Specify the repository URL and directory to clone it to
-repo_url = 'https://github.com/Spiderinattack/Devops-AWS-Jenkins.git'
-repo_dir = '/var/lib/jenkins/workspace/Trufflehog_Job/TruffleHog/TruffleHog_GIT_Repo'
+# Path to the git repository on Putty
+repo_path = '/var/lib/jenkins/workspace/Trufflehog_Job'
 
-#Check if Repo directory exists or not
-if not os.path.exists(repo_dir):
-    os.makedirs(repo_dir)
-    print("TruffleHog Directory created")
-    
-# Clone the repository to the specified directory
-subprocess.run(['git', 'clone', repo_url, repo_dir])
+# Run trufflehog scan on the repository
+scan_results = trufflehog3.scan(
+    repo_path,
+    branch='main', # You can specify a branch to scan if required
+    exclude_paths=None, # Exclude any paths from the scan
+    regex=None, # You can use a regex pattern to narrow down the search if required
+    rules=None, # Custom rules to apply to the scan
+    sensitivity=None # Level of sensitivity for the scan
+)
 
-# Change to the repository directory
-repo_path = repo_dir + '/.git'
-os.chdir(repo_path)
+# Output the scan results
+print(scan_results)
 
-# Use trufflehog to search for secrets in the latest commits
-output = subprocess.check_output(['trufflehog', '--max_depth', '10', '--regex', '--entropy', 'false'])
-
-# Print the output
-print(output.decode('utf-8'))
+# Write the scan results to a file
+with open(os.path.join(repo_path, 'trufflehog_results.txt'), 'w') as f:
+    f.write(str(scan_results))
