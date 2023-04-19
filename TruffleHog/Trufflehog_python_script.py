@@ -9,8 +9,8 @@ print(install_trufflehog)
 repo_url = 'https://github.com/Spiderinattack/Devops-AWS-Jenkins.git'
 repo_dir = '/var/lib/jenkins/workspace/Trufflehog_Job'
 
-#install_trufflehog1 = subprocess.run('trufflehog3 -h', shell=True, capture_output=True, text=True)
-#print(install_trufflehog1)
+install_trufflehog1 = subprocess.run('chmod -R 755 /var/lib/jenkins/workspace/Trufflehog_Job/TruffleHog/Trufflehog_python_script.py', shell=True, capture_output=True, text=True)
+print(install_trufflehog1.stdout)
 
 result = subprocess.run(['trufflehog3', '/var/lib/jenkins/workspace/Trufflehog_Job'], capture_output=True, text=True)
 print(result.stdout)
