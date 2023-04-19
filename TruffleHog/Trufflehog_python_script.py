@@ -1,7 +1,10 @@
 import subprocess
 import os
-import trufflehog3
 
+#install_trufflehog=subprocess.call("pip install trufflehog3",shell=true)
+install_trufflehog = subprocess.run('pip install trufflehog3', shell=True, capture_output=True, text=True)
+print(install_trufflehog)
+      
 # Specify the repository URL and directory to clone it to
 repo_url = 'https://github.com/Spiderinattack/Devops-AWS-Jenkins.git'
 repo_dir = '/var/lib/jenkins/workspace/Trufflehog_Job'
