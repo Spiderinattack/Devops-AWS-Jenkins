@@ -16,6 +16,14 @@ sed_command_pylint = "sed -n 's/.*Your code has been rated at \\([0-9]*\\.[0-9][
 # score = subprocess.run(sed_command, shell=True, capture_output=True, text=True)
 score = subprocess.check_output(sed_command_pylint, shell=True, text=True, encoding='utf-8')
 
+grep_command_factload = "grep -o -i 'def test_case' PyUnit/PyUnit_fact_load.py | wc -l"
+testcase_count = subprocess.check_output(grep_command_factload, shell=True, text=True, encoding='utf-8')
+print("Test case count", testcase_count)
+
+grep_command_pyunit = "grep -o -i 'ran successfully' results/pyunit_result.txt | wc -l"
+successful_count = subprocess.check_output(grep_command_pyunit, shell=True, text=True, encoding='utf-8')
+print("Successful count", successful_count)
+
 # with open('/var/lib/jenkins/workspace/new_Job/results/pylint_result.txt', encoding='utf-8') as f:
 #     file_contents = f.read()
 # print(file_contents)
@@ -37,7 +45,7 @@ print(score)
 print("score is: ", score)
 print("Type of score is: ", type(score))
 
-if score > '7':
+if score > '7' and (testcase_count==successful_count):
   print("score > than 7")
 else:
   print("score < than 7 hence failing")
