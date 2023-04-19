@@ -12,6 +12,12 @@ repo_dir = '/var/lib/jenkins/workspace/Trufflehog_Job'
 install_trufflehog1 = subprocess.run('chmod -R 755 /var/lib/jenkins/workspace/Trufflehog_Job/TruffleHog/Trufflehog_python_script.py', shell=True, capture_output=True, text=True)
 print(install_trufflehog1.stdout)
 
+result1 = subprocess.run(['ls -l $(which trufflehog3)', '/var/lib/jenkins/workspace/Trufflehog_Job'], capture_output=True, text=True)
+print(result1.stdout)
+
+result2 = subprocess.run(['chmod +x $(which trufflehog3)', '/var/lib/jenkins/workspace/Trufflehog_Job'], capture_output=True, text=True)
+print(result2.stdout)
+
 result = subprocess.run(['trufflehog3', '/var/lib/jenkins/workspace/Trufflehog_Job'], capture_output=True, text=True)
 print(result.stdout)
 
