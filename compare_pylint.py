@@ -10,11 +10,11 @@ print('Current new Working Directory is: ', os.getcwd())
 # score = os.popen("sed -n 's/^Final score is \([-0-9.]*\)\/.*/\1/p' pylint_result.txt").read()
 
 # sed_command = "sed -n 's/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p' pylint_result.txt"
-sed_command = "sed -n 's/.*Your code has been rated at \\([0-9]*\\.[0-9][0-9]\\).*/\\1/p' pylint_result.txt"
+sed_command_pylint = "sed -n 's/.*Your code has been rated at \\([0-9]*\\.[0-9][0-9]\\).*/\\1/p' pylint_result.txt"
 # sed_command = ["sed", "-n", "s/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p", "/home/ec2-user/Jenkins/Dev/Jenkins/workspace/Python_Job/results/pylint_result.txt"]
 # score = subprocess.call(['sed -n "s/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p" pylint_result.txt'], shell=True)
 # score = subprocess.run(sed_command, shell=True, capture_output=True, text=True)
-score = subprocess.check_output(sed_command, shell=True, text=True, encoding='utf-8')
+score = subprocess.check_output(sed_command_pylint, shell=True, text=True, encoding='utf-8')
 
 # with open('/var/lib/jenkins/workspace/new_Job/results/pylint_result.txt', encoding='utf-8') as f:
 #     file_contents = f.read()
