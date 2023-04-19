@@ -3,7 +3,7 @@ import os
 
 # Specify the repository URL and directory to clone it to
 repo_url = 'https://github.com/Spiderinattack/Devops-AWS-Jenkins.git'
-repo_dir = '/var/lib/jenkins/workspace/Python_Job/TruffleHog/TruffleHog_GIT_Repo'
+repo_dir = '/var/lib/jenkins/workspace/Trufflehog_Job/TruffleHog/TruffleHog_GIT_Repo'
 
 # Clone the repository to the specified directory
 subprocess.run(['git', 'clone', repo_url, repo_dir])
