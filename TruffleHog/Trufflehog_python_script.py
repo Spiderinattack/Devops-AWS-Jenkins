@@ -9,7 +9,7 @@ print(install_trufflehog)
 repo_url = 'https://github.com/Spiderinattack/Devops-AWS-Jenkins.git'
 repo_dir = '/var/lib/jenkins/workspace/Trufflehog_Job'
 
-output = subprocess.check_output('trufflehog3 /var/lib/jenkins/workspace/Trufflehog_Job', shell=True, text=True, encoding='utf-8')
+output = subprocess.check_output('trufflehog3 https://github.com/Spiderinattack/Devops-AWS-Jenkins.git', shell=True, text=True, encoding='utf-8')
 print("Output :", output)
 
 # subprocess.Popen() method is used to run the trufflehog3 command with the directory
