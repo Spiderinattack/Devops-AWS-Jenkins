@@ -1,0 +1,18 @@
+import subprocess
+
+# Specify the repository URL and directory to clone it to
+repo_url = 'https://github.com/Spiderinattack/Devops-AWS-Jenkins.git'
+repo_dir = '/var/lib/jenkins/workspace/Python_Job/TruffleHog/TruffleHog_GIT_Repo'
+
+# Clone the repository to the specified directory
+subprocess.run(['git', 'clone', repo_url, repo_dir])
+
+# Change to the repository directory
+repo_path = repo_dir + '/.git'
+os.chdir(repo_path)
+
+# Use trufflehog to search for secrets in the latest commits
+output = subprocess.check_output(['trufflehog', '--max_depth', '10', '--regex', '--entropy', 'false'])
+
+# Print the output
+print(output.decode('utf-8'))
