@@ -1,1 +1,11 @@
-// dummy file
+************* Module code1
+Programs/code1.py:12:0: C0301: Line too long (105/100) (line-too-long)
+Programs/code1.py:18:0: C0303: Trailing whitespace (trailing-whitespace)
+Programs/code1.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+Programs/code1.py:3:0: W0611: Unused import sys (unused-import)
+
+------------------------------------------------------------------
+Your code has been rated at 6.92/10 (previous run: 6.92/10, +0.00)
+
+Type of score <class 'str'>
+Final score is 6.923076923076923

@@ -1,0 +1,10 @@
+
+SetUp Called for Arrange operations
+Test Case 1 called for Act and Assert operations
+Test case 1 ran successfully
+Wrapping up the current test case
+
+SetUp Called for Arrange operations
+inside Test case 2
+Test case 2 ran successfully
+Wrapping up the current test case
