@@ -40,5 +40,5 @@ print("Type of score is: ", type(score))
 if score > '7':
   print("score > than 7")
 else:
-  print("score < than 7")
+  print("score < than 7 hence failing")
   exit(1)
