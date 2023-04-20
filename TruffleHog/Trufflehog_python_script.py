@@ -1,13 +1,5 @@
 import subprocess
 import os
-#import trufflehog
-
-#install_trufflehog=subprocess.call("pip install trufflehog3",shell=true, capture_output=True, text=True)
-#install_trufflehog = subprocess.run('pip install trufflehog3', shell=True, capture_output=True, text=True)
-#print(install_trufflehog)
-
-#output_txt = subprocess.Popen(["pip3 install trufflehog"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()[0]
-#print(output_txt.decode('utf-8'))
 
 with open('output.txt' , 'w') as outfile:
     output_txt = subprocess.Popen(["pip3 install trufflehog"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
@@ -17,6 +9,10 @@ with open('output.txt' , 'w') as outfile:
 with open('output.txt','r') as infile:
     output = infile.read()
 print(output)
+
+output_txt1 = subprocess.Popen(["ls -l /var/lib/jenkins/workspace/TruffleHog_Job/TruffleHog/Trufflehog_python_script.py"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+print(output_txt1.stdout)
+print("Checked Permissions")
 
 # Specify the repository URL and directory to clone it to
 repo_url = 'https://github.com/Spiderinattack/Devops-AWS-Jenkins.git'
