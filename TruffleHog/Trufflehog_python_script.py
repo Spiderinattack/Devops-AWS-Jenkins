@@ -22,7 +22,7 @@ permission_check = subprocess.run('ls -l /var/lib/jenkins/workspace/TruffleHog_J
 print(permission_check.stdout)
 print("Hello")
 
-output = subprocess.Popen(['/home/ec2-user/.local/bin/trufflehog3 https://github.com/Spiderinattack/Devops-AWS-Jenkins.git', '/var/lib/jenkins/workspace/Trufflehog_Job'], shell=True, stdout=subprocess.PIPE).communicate()[0]
+output = subprocess.Popen(['trufflehog3 https://github.com/Spiderinattack/Devops-AWS-Jenkins.git', '/var/lib/jenkins/workspace/Trufflehog_Job'], shell=True, stdout=subprocess.PIPE).communicate()[0]
 
 # Print the output
 print(output.decode())
