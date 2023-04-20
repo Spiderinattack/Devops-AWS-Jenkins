@@ -2,11 +2,14 @@ import subprocess
 import os
 
 with open('output.txt' , 'w') as outfile:
-    output_txt = subprocess.Popen(["ls -l /var/lib/jenkins/workspace/TruffleHog_Job/TruffleHog/Trufflehog_python_script.py"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    output_txt = subprocess.Popen(["trufflehog --json https://github.com/Spiderinattack/Devops-AWS-Jenkins.git"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     for line in output_txt.stdout:
-        #outfile.write(line)
-        print(line, end='')
-
+        outfile.write(line)
+        #print(line, end='')
+    for line in output_txt.stderr:
+        outfile.write(line)
+        #print(line, end='')
+        
 with open('output.txt','r') as infile:
     output = infile.read()
 print(output)
@@ -22,17 +25,17 @@ repo_url = 'https://github.com/Spiderinattack/Devops-AWS-Jenkins.git'
 repo_dir = '/var/lib/jenkins/workspace/Trufflehog_Job'
 print(repo_dir)
 
-trufflehog1 = subprocess.run('/home/ec2-user/.local/bin/trufflehog  https://github.com/Spiderinattack/Devops-AWS-Jenkins.git', shell=True, capture_output=True, text=True)
-print(trufflehog1.stdout)
-print("Hello")
+#trufflehog1 = subprocess.run('/home/ec2-user/.local/bin/trufflehog  https://github.com/Spiderinattack/Devops-AWS-Jenkins.git', shell=True, capture_output=True, text=True)
+#print(trufflehog1.stdout)
+#print("Hello")
 
-find1 = subprocess.run('find /var/lib/jenkins/workspace/TruffleHog_Job/ -name "Trufflehog_python_script.py"', shell=True, capture_output=True, text=True)
-print(find1.stdout)
-print("Hello")
+#find1 = subprocess.run('find /var/lib/jenkins/workspace/TruffleHog_Job/ -name "Trufflehog_python_script.py"', shell=True, capture_output=True, text=True)
+#print(find1.stdout)
+#print("Hello")
 
-permission_check = subprocess.run('ls -l /var/lib/jenkins/workspace/TruffleHog_Job/TruffleHog/Trufflehog_python_script.py', shell=True, capture_output=True, text=True)
-print(permission_check.stdout)
-print("Hello")
+#permission_check = subprocess.run('ls -l /var/lib/jenkins/workspace/TruffleHog_Job/TruffleHog/Trufflehog_python_script.py', shell=True, capture_output=True, text=True)
+#print(permission_check.stdout)
+#print("Hello")
 
 #output = subprocess.Popen(['trufflehog /var/lib/jenkins/workspace/Trufflehog_Job', '/var/lib/jenkins/workspace/Trufflehog_Job'], shell=True, stdout=subprocess.PIPE).communicate()[0]
 
