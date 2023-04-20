@@ -11,7 +11,7 @@ with open('output.txt','r') as infile:
 print(output)
 
 output_txt1 = subprocess.Popen(["ls -l /var/lib/jenkins/workspace/TruffleHog_Job/TruffleHog/Trufflehog_python_script.py"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-output_stream=output_txt1.stdout)
+output_stream=output_txt1.stdout
 output_string=output_stream.read().decode(utf-8')
 print (output_string)
 
