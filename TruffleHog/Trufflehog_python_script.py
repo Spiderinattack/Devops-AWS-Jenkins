@@ -6,7 +6,7 @@ print(os.environ['PATH'])
 
 install_trufflehog = subprocess.Popen(["pip3 install trufflehog"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 print(output_txt.stdout)
-trufflehog_dir=os.getcwd())
+trufflehog_dir=os.getcwd()
 print(trufflehog_dir)
 
 os.chdir(trufflehog_dir)
