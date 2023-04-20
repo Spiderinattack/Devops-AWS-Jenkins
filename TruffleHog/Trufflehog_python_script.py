@@ -3,9 +3,15 @@ import os
 
 os.environ['PATH'] +=  ':/home/ec2-user/.local/bin/'
 print(os.environ['PATH'])
-os.chdir('/home/ec2-user/.local/bin/')
-print(os.getcwd())
 
+install_trufflehog = subprocess.Popen(["pip3 install trufflehog"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+print(output_txt.stdout)
+trufflehog_dir=os.getcwd())
+print(trufflehog_dir)
+
+os.chdir(trufflehog_dir)
+print(os.getcwd())
+        
 with open('output.txt' , 'w') as outfile:
     output_txt = subprocess.Popen(["trufflehog https://github.com/Spiderinattack/Devops-AWS-Jenkins.git"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     for line in output_txt.stdout:
