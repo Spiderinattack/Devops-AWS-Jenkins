@@ -12,7 +12,7 @@ print(output)
 
 output_txt1 = subprocess.Popen(["ls -l /var/lib/jenkins/workspace/TruffleHog_Job/TruffleHog/Trufflehog_python_script.py"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 output_stream=output_txt1.stdout
-output_string=output_stream.read().decode('utf-8')
+output_string=output_stream.read()
 print (output_string)
 
 # Specify the repository URL and directory to clone it to
