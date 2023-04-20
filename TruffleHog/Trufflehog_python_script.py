@@ -1,7 +1,8 @@
 import subprocess
 import os
 
-#os.environ['PATH'] +=  ':/home/ec2-user/.local/bin/'
+os.environ['PATH'] +=  ':/home/ec2-user/.local/bin/'
+print(os.environ['PATH'])
 
 with open('output.txt' , 'w') as outfile:
     output_txt = subprocess.Popen(["/home/ec2-user/.local/bin/trufflehog https://github.com/Spiderinattack/Devops-AWS-Jenkins.git"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
