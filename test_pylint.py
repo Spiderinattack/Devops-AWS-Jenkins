@@ -13,3 +13,5 @@ final_score = results.linter.stats.global_note
 final_score
 print("Type of score", type(final_score))
 print("Final score is",final_score)
+
+# adding a dummy line
