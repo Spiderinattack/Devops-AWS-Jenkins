@@ -9,9 +9,8 @@ print(install_trufflehog.stdout.read())
 trufflehog_dir=os.getcwd()
 print(trufflehog_dir)
 
-os.chdir(trufflehog_dir)
-print(os.getcwd())
-#"trufflehog3 https://github.com/Spiderinattack/Devops-AWS-Jenkins.git"
+root_login = subprocess.Popen(["sudo cd /home/ec2-user/.local/bin/"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+print(root_login.stdout.read())
 
 with open('output.txt' , 'w') as outfile:
     output_txt = subprocess.Popen(["trufflehog https://github.com/Spiderinattack/Devops-AWS-Jenkins.git"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
