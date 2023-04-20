@@ -2,9 +2,10 @@ import subprocess
 import os
 
 with open('output.txt' , 'w') as outfile:
-    output_txt = subprocess.Popen(["/home/ec2-user/.local/bin/trufflehog  https://github.com/Spiderinattack/Devops-AWS-Jenkins.git"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    output_txt = subprocess.Popen(["trufflehog  https://github.com/Spiderinattack/Devops-AWS-Jenkins.git"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     for line in output_txt.stdout:
-        outfile.write(line)
+        #outfile.write(line)
+        print(line, end='')
 
 with open('output.txt','r') as infile:
     output = infile.read()
