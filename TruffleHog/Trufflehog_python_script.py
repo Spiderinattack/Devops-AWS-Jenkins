@@ -5,7 +5,7 @@ os.environ['PATH'] +=  ':/home/ec2-user/.local/bin/'
 print(os.environ['PATH'])
 
 install_trufflehog = subprocess.Popen(["pip3 install trufflehog"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-print(install_trufflehog.stdout)
+print(install_trufflehog.stdout.read())
 trufflehog_dir=os.getcwd()
 print(trufflehog_dir)
 
