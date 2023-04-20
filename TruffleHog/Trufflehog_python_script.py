@@ -4,7 +4,7 @@ import os
 os.environ['PATH'] +=  ':/home/ec2-user/.local/bin/'
 print(os.environ['PATH'])
 
-install_trufflehog = subprocess.Popen(["pip3 install trufflehog"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+install_trufflehog = subprocess.Popen(["pip install trufflehog3"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 print(install_trufflehog.stdout.read())
 trufflehog_dir=os.getcwd()
 print(trufflehog_dir)
@@ -13,7 +13,7 @@ os.chdir(trufflehog_dir)
 print(os.getcwd())
         
 with open('output.txt' , 'w') as outfile:
-    output_txt = subprocess.Popen(["trufflehog https://github.com/Spiderinattack/Devops-AWS-Jenkins.git"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    output_txt = subprocess.Popen(["trufflehog3 https://github.com/Spiderinattack/Devops-AWS-Jenkins.git"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     for line in output_txt.stdout:
         outfile.write(line)
         #print(line, end='')
@@ -25,7 +25,7 @@ with open('output.txt','r') as infile:
     output = infile.read()
 print(output)
 
-os.chdir('/var/lib/jenkins/workspace/TruffleHog_Job')
+#os.chdir('/var/lib/jenkins/workspace/TruffleHog_Job')
 print(os.getcwd())
 output_txt1 = subprocess.Popen(["ls -l /var/lib/jenkins/workspace/TruffleHog_Job/TruffleHog/Trufflehog_python_script.py"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 output_stream=output_txt1.stdout
