@@ -2,7 +2,7 @@ import subprocess
 import os
 import trufflehog3
 
-install_trufflehog=subprocess.call("pip install trufflehog3",shell=true,capture_output=True, text=True)
+install_trufflehog=subprocess.call("pip install trufflehog3",shell=true)
 #install_trufflehog = subprocess.run('pip install trufflehog3', shell=True, capture_output=True, text=True)
 print(install_trufflehog)
       
