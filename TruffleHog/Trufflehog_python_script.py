@@ -14,13 +14,13 @@ print(os.getcwd())
 #"trufflehog3 https://github.com/Spiderinattack/Devops-AWS-Jenkins.git"
 
 with open('output.txt' , 'w') as outfile:
-    output_txt = subprocess.Popen(["ls -l /var/lib/jenkins/workspace/TruffleHog_Job/TruffleHog/Trufflehog_python_script.py"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    output_txt = subprocess.Popen(["trufflehog3 https://github.com/Spiderinattack/Devops-AWS-Jenkins.git"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     for line in output_txt.stdout:
         outfile.write(line)
-        #print(line, end='')
+        print(line, end='')
     for line in output_txt.stderr:
         outfile.write(line)
-        #print(line, end='')
+        print(line, end='')
         
 with open('output.txt','r') as infile:
     output = infile.read()
