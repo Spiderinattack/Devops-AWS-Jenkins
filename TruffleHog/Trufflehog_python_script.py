@@ -11,7 +11,7 @@ with open('output.txt','r') as infile:
 print(output)
 
 output_txt1 = subprocess.Popen(["ls -l /var/lib/jenkins/workspace/TruffleHog_Job/TruffleHog/Trufflehog_python_script.py"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-print(output_txt1.stdout)
+print(output_txt1.stdout.decode('UTF-8'))
 print("Checked Permissions")
 
 # Specify the repository URL and directory to clone it to
