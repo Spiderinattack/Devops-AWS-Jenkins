@@ -6,7 +6,7 @@ import trufflehog3
 #install_trufflehog = subprocess.run('pip install trufflehog3', shell=True, capture_output=True, text=True)
 #print(install_trufflehog)
 
-output_txt = subprocess.call(["pip install trufflehog3"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()[0]
+output_txt = subprocess.Popen(["pip install trufflehog3"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()[0]
 print(output_txt.decode('utf-8'))
 
 # Specify the repository URL and directory to clone it to
