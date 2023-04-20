@@ -1,8 +1,9 @@
 import subprocess
 import os
+import trufflehog3
 
 #install_trufflehog=subprocess.call("pip install trufflehog3",shell=true)
-install_trufflehog = subprocess.run('pip install trufflehog3', shell=True, capture_output=True, text=True)
+#install_trufflehog = subprocess.run('pip install trufflehog3', shell=True, capture_output=True, text=True)
 print(install_trufflehog)
       
 # Specify the repository URL and directory to clone it to
@@ -11,7 +12,7 @@ repo_dir = '/var/lib/jenkins/workspace/Trufflehog_Job'
 
 install_trufflehog1 = subprocess.run('chmod -R 755 /var/lib/jenkins/workspace/Trufflehog_Job/TruffleHog/Trufflehog_python_script.py', shell=True, capture_output=True, text=True)
 print(install_trufflehog1.stdout)
-
+print("Hello")
 #result1 = subprocess.run(['ls -l $(which trufflehog3)', '/var/lib/jenkins/workspace/Trufflehog_Job'], capture_output=True, text=True)
 #print(result1.stdout)
 
