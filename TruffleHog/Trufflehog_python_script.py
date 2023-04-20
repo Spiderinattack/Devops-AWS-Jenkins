@@ -2,13 +2,14 @@ import subprocess
 import os
 
 with open('output.txt' , 'w') as outfile:
-    output_txt = subprocess.Popen(["pip3 install trufflehog"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    output_txt = subprocess.Popen(["/home/ec2-user/.local/bin/trufflehog  https://github.com/Spiderinattack/Devops-AWS-Jenkins.git"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     for line in output_txt.stdout:
         outfile.write(line)
 
 with open('output.txt','r') as infile:
     output = infile.read()
 print(output)
+
 
 output_txt1 = subprocess.Popen(["ls -l /var/lib/jenkins/workspace/TruffleHog_Job/TruffleHog/Trufflehog_python_script.py"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 output_stream=output_txt1.stdout
