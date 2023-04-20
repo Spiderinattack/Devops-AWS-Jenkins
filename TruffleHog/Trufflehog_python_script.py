@@ -4,7 +4,7 @@ import trufflehog3
 
 #install_trufflehog=subprocess.call("pip install trufflehog3",shell=true)
 #install_trufflehog = subprocess.run('pip install trufflehog3', shell=True, capture_output=True, text=True)
-print("install_trufflehog")
+#print(install_trufflehog)
       
 # Specify the repository URL and directory to clone it to
 repo_url = 'https://github.com/Spiderinattack/Devops-AWS-Jenkins.git'
@@ -30,10 +30,10 @@ print("Hello")
 # stdout=subprocess.PIPE argument redirects the output of the command to a pipe
 # stderr=subprocess.PIPE argument redirects the error of the command to a pipe
 # communicate() method waits for the command to complete and returns a tuple of (stdout, stderr) 
-output = subprocess.Popen(['trufflehog3 /var/lib/jenkins/workspace/Trufflehog_Job', '/var/lib/jenkins/workspace/Trufflehog_Job'], shell=True, stdout=subprocess.PIPE).communicate()[0]
+#output = subprocess.Popen(['trufflehog3 /var/lib/jenkins/workspace/Trufflehog_Job', '/var/lib/jenkins/workspace/Trufflehog_Job'], shell=True, stdout=subprocess.PIPE).communicate()[0]
 
 # Print the output
-print(output.decode())
+#print(output.decode())
 
 # Open the output file in write mode
 #with open('TruffleHog/results.txt', 'w') as f:
