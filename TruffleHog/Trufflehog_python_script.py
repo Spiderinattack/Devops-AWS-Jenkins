@@ -14,7 +14,7 @@ print(root_login.stdout.read())
 print(root_login.stderr.read())
 
 with open('output.txt' , 'w') as outfile:
-    output_txt = subprocess.Popen(["/home/ec2-user/.local/bin/trufflehog https://github.com/Spiderinattack/Devops-AWS-Jenkins.git"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    output_txt = subprocess.Popen(["trufflehog https://github.com/Spiderinattack/Devops-AWS-Jenkins.git"], shell=True ,stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     for line in output_txt.stdout:
         outfile.write(line)
         print(line, end='')
