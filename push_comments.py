@@ -4,7 +4,7 @@ import json
 owner = 'Spiderinattack'
 repo = 'Devops-AWS-Jenkins'
 git_username = "Spiderinattack"
-git_api_token = "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"
+git_api_token = "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"
 
 git_api_endpoint = f'https://api.github.com/repos/{owner}/{repo}/pulls'
 git_auth = (git_username, git_api_token)
