@@ -3,17 +3,10 @@ import subprocess
 import re
 
 os.system('pwd')
-# os.system("sed -n 's/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p' results/pylint_result.txt")
-# os.chdir('/var/lib/jenkins/workspace/new_Job/results/')
 os.system('pwd')
 print('Current new Working Directory is: ', os.getcwd())
-# score = os.popen("sed -n 's/^Final score is \([-0-9.]*\)\/.*/\1/p' pylint_result.txt").read()
 
-# sed_command = "sed -n 's/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p' pylint_result.txt"
 sed_command_pylint = "sed -n 's/.*Your code has been rated at \\([0-9]*\\.[0-9][0-9]\\).*/\\1/p' results/pylint_result.txt"
-# sed_command = ["sed", "-n", "s/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p", "/home/ec2-user/Jenkins/Dev/Jenkins/workspace/Python_Job/results/pylint_result.txt"]
-# score = subprocess.call(['sed -n "s/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p" pylint_result.txt'], shell=True)
-# score = subprocess.run(sed_command, shell=True, capture_output=True, text=True)
 score = subprocess.check_output(sed_command_pylint, shell=True, text=True, encoding='utf-8')
 
 grep_command_factload = "grep -o -i 'def test_case' PyUnit/PyUnit_fact_load.py | wc -l"
@@ -23,25 +16,8 @@ print("Test case count", testcase_count)
 grep_command_pyunit = "grep -o -i 'ran successfully' results/pyunit_result.txt | wc -l"
 successful_count = subprocess.check_output(grep_command_pyunit, shell=True, text=True, encoding='utf-8')
 print("Successful count", successful_count)
-
-# with open('/var/lib/jenkins/workspace/new_Job/results/pylint_result.txt', encoding='utf-8') as f:
-#     file_contents = f.read()
-# print(file_contents)
-# score = subprocess.check_output(sed_command, shell=True, input=file_contents, encoding='utf-8')
-# score_bytes = subprocess.check_output(sed_command, shell=True)
-# score = score_bytes.decode('utf-8')
-# score = subprocess.Popen(sed_command, stdout=subprocess.PIPE, text=True)
-
-# print the output
-# print(score.communicate()[0])
 print(score)
-# score = subprocess.call(["sed -n 's/^Final score is \([-0-9.]*\)\/.*/\1/p' pylint_result.txt"], shell=True)
 
-
-# regex = re.compile('s/^Your code has been rated at \([-0-9.]*\)\/.*/\1/p')
-# with open("pylint_result.txt") as f:
-#     for line in f:
-#         score = regex.search(line)
 print("score is: ", score)
 print("Type of score is: ", type(score))
 
