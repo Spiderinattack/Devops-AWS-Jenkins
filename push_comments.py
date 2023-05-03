@@ -29,7 +29,7 @@ if git_response.status_code == 200:
     comment_body = 'Pylint score is ' + score
     response = requests.post(comments_api_endpoint, auth=git_auth, json={'body': comment_body})
     print(response)
-
+    
     if response.status_code == 201:
         print('Comment added successfully.')
     else:
