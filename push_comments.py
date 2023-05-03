@@ -2,7 +2,7 @@ import requests
 from github import Github
 import subprocess
 
-access_token_git = "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"
+access_token_git = "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"
 
 g = Github(access_token_git)
 repo = g.get_repo("Spiderinattack/Devops-AWS-Jenkins")
