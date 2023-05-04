@@ -1,8 +1,6 @@
 import requests
 import json
 
-for i in range(4)
-    print(i)
 git_api_endpoint = "https://api.github.com/repos/Spiderinattack/Devops-AWS-Jenkins/pulls"
 git_username = "Spiderinattack"
 git_api_token = "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"
