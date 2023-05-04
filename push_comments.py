@@ -1,5 +1,6 @@
 import requests
 import json
+import subprocess
 
 owner = 'Spiderinattack'
 repo = 'Devops-AWS-Jenkins'
@@ -8,9 +9,10 @@ git_api_token = "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"
 
 git_api_endpoint = f'https://api.github.com/repos/{owner}/{repo}/pulls'
 git_auth = (git_username, git_api_token)
-
-git_response = requests.get(git_api_endpoint, auth=git_auth)
-
+git_headers = {
+    "Accept": "application/vnd.github.v3+json"
+}
+git_response = requests.get(git_api_endpoint, auth=git_auth, headers=git_headers)
 if git_response.status_code == 200:
     pulls = json.loads(git_response.text)
     if pulls and len(pulls) > 0:
