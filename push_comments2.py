@@ -1,7 +1,7 @@
 import requests
 from github import Github
 
-access_token_git = "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"
+access_token_git = "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"
 
 g = Github(access_token_git)
 repo = g.get_repo("Spiderinattack/Devops-AWS-Jenkins")
