@@ -13,6 +13,7 @@ git_headers = {
     "Accept": "application/vnd.github.v3+json"
 }
 git_response = requests.get(git_api_endpoint, auth=git_auth, headers=git_headers, verbose=True)
+print(git_response)
 if git_response.status_code == 200:
     pulls = json.loads(git_response.text)
     if pulls and len(pulls) > 0:
