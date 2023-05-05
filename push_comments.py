@@ -5,7 +5,7 @@ import subprocess
 owner = 'Spiderinattack'
 repo = 'Devops-AWS-Jenkins'
 git_username = "Spiderinattack"
-git_api_token = "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"
+git_api_token = "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"
 
 git_api_endpoint = f'https://api.github.com/repos/{owner}/{repo}/pulls'
 git_auth = (git_username, git_api_token)
