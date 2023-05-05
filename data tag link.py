@@ -1,6 +1,6 @@
 import boto3
 import json
-def lambda_handler(event, context):
+def Seqseriesr(event, context):
     client = boto3.client('lakeformation')
     account_id = '012918428775'
     tag_data_access = {
